@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="page-wrapper">
+      <div class="card">
+
+        <!-- HEADER -->
+        <header class="card-header">
+          <div class="header-left">
+            <p class="header-day" id="headerDay">Monday</p>
+            <p class="header-date" id="headerDate">March 23, 2026</p>
+          </div>
+
+          <h1 class="header-title">
+            <span class="title-icon">✦</span>
+            To‑Do List
+          </h1>
+
+          <div class="header-right">
+            <p class="header-time" id="headerTime">00:00:00</p>
+            <p class="header-period" id="headerPeriod">AM</p>
+          </div>
+        </header>
+
+        <!-- CALENDAR ROW -->
+        <section class="calendar-section" aria-label="Weekly calendar">
+          <div class="calendar-row" id="calendarRow">
+            <!-- Populated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- PROGRESS -->
+        <div class="progress-block">
+          <div class="progress-labels">
+            <span class="progress-label-text" id="statsText">0 of 0 completed</span>
+            <span class="progress-pct" id="statsPct">0%</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <!-- FILTER TABS -->
+        <div class="filter-tabs" role="tablist">
+          <button class="tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="tab" data-filter="pending" role="tab" aria-selected="false">Pending</button>
+          <button class="tab" data-filter="done" role="tab" aria-selected="false">Done</button>
+        </div>
+
+        <!-- TASK LIST -->
+        <main class="task-list" id="taskList" aria-label="Task list">
+          <!-- Populated by JavaScript -->
+        </main>
+
+        <!-- EMPTY STATE -->
+        <div class="empty-state" id="emptyState" hidden>
+          <div class="empty-icon">🗒️</div>
+          <p class="empty-text">No tasks here yet.</p>
+          <p class="empty-sub">Add one below to get started!</p>
+        </div>
+
+        <!-- ADD TASK -->
+        <footer class="add-footer">
+          <div class="add-row">
+            <input
+              type="text"
+              class="add-input"
+              id="newTaskInput"
+              placeholder="Add a new task…"
+              maxlength="80"
+              autocomplete="off"
+              aria-label="New task text"
+            />
+            <input
+              type="time"
+              class="add-time"
+              id="newTaskTime"
+              aria-label="Task time"
+            />
+            <button class="add-btn" id="addTaskBtn" aria-label="Add task">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
